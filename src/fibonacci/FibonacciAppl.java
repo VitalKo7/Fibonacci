@@ -1,13 +1,15 @@
 package fibonacci;
 
+import fibonacci.model.Fibonacci;
 import fibonacci.model.FibonacciIterator;
-
-import java.util.Arrays;
 
 public class FibonacciAppl {
     public static void main(String[] args) {
         // todo: print all numbers (8 items) and calculate the sum;
-        FibonacciIterator iterator = new FibonacciIterator(8);
+
+        Fibonacci fibonacci = new Fibonacci(8);
+//        System.out.println(fibonacci.getQuantity());
+        FibonacciIterator iterator = new FibonacciIterator(fibonacci.getQuantity());
 
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
