@@ -1,26 +1,19 @@
 package fibonacci;
 
+import fibonacci.model.FibonacciIterator;
+
 import java.util.Arrays;
 
 public class FibonacciAppl {
     public static void main(String[] args) {
         // todo: print all numbers (8 items) and calculate the sum;
-        int[] fibonacci = new int[8];
-        int count = 0;
-        fibonacci[count] = 1; // count = 0
-        fibonacci[count + 1] = 1; // count = 1
+        FibonacciIterator iterator = new FibonacciIterator(8);
 
-        int sum = 0;
-        sum = fibonacci[count] + fibonacci[count + 1];
-
-        for (count = 2; count < fibonacci.length; count++) {
-            fibonacci[count] = fibonacci[count - 2] + fibonacci[count - 1];
-            sum += fibonacci[count];
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
 
-        System.out.println(Arrays.toString(fibonacci));
-        System.out.println(fibonacci.length);
-        System.out.println(sum);
+        System.out.println("Сумма первых 8 элементов: " + iterator.getSum());
     }
 }
 
