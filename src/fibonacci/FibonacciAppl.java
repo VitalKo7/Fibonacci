@@ -1,21 +1,20 @@
 package fibonacci;
 
 import fibonacci.model.Fibonacci;
-import fibonacci.model.FibonacciIterator;
 
 public class FibonacciAppl {
     public static void main(String[] args) {
         // todo: print all numbers (8 items) and calculate the sum;
 
-        Fibonacci fibonacci = new Fibonacci(2);
-//        System.out.println(fibonacci.getQuantity());
-        FibonacciIterator iterator = new FibonacciIterator(fibonacci.getQuantity());
+        Fibonacci fibonacci = new Fibonacci(8);
+        int sum = 0;
 
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        for (Integer num : fibonacci) {
+            sum += num;
+            System.out.println(num);
         }
 
-        System.out.println("Сумма первых " + fibonacci.getQuantity() + " элементов: " + iterator.getSum());
+        System.out.println("Сумма элементов: " + sum);
     }
 }
 

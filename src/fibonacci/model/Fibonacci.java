@@ -19,7 +19,7 @@ public class Fibonacci implements Iterable<Integer> {
 
     @Override
     public Iterator<Integer> iterator() {
-        return null;
+        return new FibonacciIterator(quantity);
     }
 
 }

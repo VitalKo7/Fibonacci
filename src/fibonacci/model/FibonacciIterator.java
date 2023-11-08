@@ -1,43 +1,37 @@
 package fibonacci.model;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class FibonacciIterator implements Iterator<Integer> {
-    private int[] fibonacci;
+    private int quantity;
+    private int prev;
+    private int prePrev;
     private int counter;
-    private int sum;
 
     // сколько всего чисел - надо знать
-    public FibonacciIterator(int capacity) {
-        fibonacci = new int[capacity];
-        fibonacci[0] = 1;
-        fibonacci[1] = 1;
-        for (int i = 2; i < fibonacci.length; i++) {
-            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-        }
-        counter = 0;
-        sum = 0;
+    public FibonacciIterator(int quantity) {
+        this.quantity = quantity;
+        prev = 1;
+        prePrev = 1;
+        counter = 1;
     }
 
     @Override
     public boolean hasNext() {
-        return counter < fibonacci.length;
+        return counter <= quantity;
     }
 
     // надо знать только 2 предыдущие числа
     // вычислил следующее число, перезаписал ряд
     @Override
     public Integer next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+        if (counter++ <= 2) {
+            return 1;
         }
-        sum += fibonacci[counter++];
-        return fibonacci[counter - 1];
-    }
-
-    public int getSum() {
-        return sum;
+        int curr = prePrev + prev;
+        prePrev = prev;
+        prev = curr;
+        return curr;
     }
 }
 
