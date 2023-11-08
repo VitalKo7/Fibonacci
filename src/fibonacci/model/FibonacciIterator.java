@@ -9,7 +9,6 @@ public class FibonacciIterator implements Iterator<Integer> {
     private int sum;
 
     // сколько всего чисел - надо знать
-
     public FibonacciIterator(int capacity) {
         fibonacci = new int[capacity];
         fibonacci[0] = 1;
