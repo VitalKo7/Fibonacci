@@ -6,7 +6,9 @@ public class FibonacciAppl {
     public static void main(String[] args) {
         // todo: print all numbers (8 items) and calculate the sum;
 
-        Fibonacci fibonacci = new Fibonacci(8);
+        int quantity = 1;
+
+        Fibonacci fibonacci = new Fibonacci(quantity);
         int sum = 0;
 
         for (Integer num : fibonacci) {
@@ -14,7 +16,7 @@ public class FibonacciAppl {
             System.out.println(num);
         }
 
-        System.out.println("Сумма элементов: " + sum);
+        System.out.println("Сумма первых " + quantity + " элементов: " + sum);
     }
 }
 
