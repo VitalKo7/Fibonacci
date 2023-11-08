@@ -6,7 +6,7 @@ public class FibonacciAppl {
     public static void main(String[] args) {
         // todo: print all numbers (8 items) and calculate the sum;
 
-        int quantity = 1;
+        int quantity = 8;
 
         Fibonacci fibonacci = new Fibonacci(quantity);
         int sum = 0;
